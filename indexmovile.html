@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de LinkedIn</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f3f2ef;
+        }
+        .profile-header {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .profile-header img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        .profile-header h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .profile-header p {
+            color: #666;
+        }
+        .section {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .section ul li {
+            margin-bottom: 15px;
+        }
+        .section ul li h4 {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .section ul li p {
+            color: #666;
+        }
+        .navbar-vertical {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 200px;
+            background-color: #fff;
+            border-right: 1px solid #ddd;
+            padding-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-vertical a {
+            display: block;
+            color: #333;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .navbar-vertical a:hover {
+            background-color: #f3f2ef;
+        }
+        .navbar-vertical i {
+            margin-right: 10px;
+        }
+        .content {
+            margin-left: 220px;
+        }
+        @media (max-width: 768px) {
+            .navbar-vertical {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                box-shadow: none;
+            }
+            .navbar-vertical a {
+                display: inline-block;
+                width: auto;
+                padding: 10px;
+            }
+            .content {
+                margin-left: 0;
+            }
+            .profile-header img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar-vertical">
+        <a href="#" data-toggle="modal" data-target="#resumeModal"><i class="fas fa-file-alt"></i> Resume</a>
+        <a href="#" onclick="openWhatsApp()"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://www.linkedin.com/in/tu-perfil" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+    <div class="content container mt-5">
+        <div class="profile-header row">
+            <div class="col-md-4 text-center">
+                <img src="https://via.placeholder.com/150" class="img-fluid rounded-circle" alt="Foto de perfil">
+            </div>
+            <div class="col-md-8">
+                <h1>Nombre Apellido</h1>
+                <p>Profesión | Ubicación</p>
+                <p>Resumen breve sobre ti. Aquí puedes incluir tus habilidades y logros más destacados.</p>
+            </div>
+        </div>
+        <div id="resume" class="section">
+            <h2>Experiencia</h2>
+            <ul>
+                <li>
+                    <h4>Nombre del Puesto</h4>
+                    <p>Empresa - Fecha de inicio a Fecha de fin</p>
+                    <p>Descripción breve de tus responsabilidades y logros.</p>
+                </li>
+                <!-- Añade más experiencias aquí -->
+            </ul>
+        </div>
+        <div id="skills" class="section">
+            <h2>Habilidades</h2>
+            <ul>
+                <li>
+                    <h4>Habilidad 1</h4>
+                    <p>Descripción breve de la habilidad.</p>
+                </li>
+                <!-- Añade más habilidades aquí -->
+            </ul>
+        </div>
+        <div id="contact" class="section">
+            <h2>Contacto</h2>
+            <ul>
+                <li>
+                    <h4>Email</h4>
+                    <p>tuemail@ejemplo.com</p>
+                </li>
+                <!-- Añade más métodos de contacto aquí -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal for Resume -->
+    <div class="modal fade" id="resumeModal" tabindex="-1" role="dialog" aria-labelledby="resumeModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resumeModalLabel">Descargar Resume</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Haz clic en el botón de abajo para descargar el resume.</p>
+                    <a href="ruta/al/archivo/resume.pdf" class="btn btn-primary" download>Descargar Resume</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openWhatsApp() {
+            window.open('https://wa.me/5491123456789', '_blank');
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
